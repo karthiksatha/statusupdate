@@ -1,0 +1,9 @@
+<h1>Admin#invite</h1>
+<p>Find me in app/views/admin/invite.html.erb</p>
+<%= link_to "<< index", :action => 'index' %><br>
+<%= form_for(:admin,:url => { :controller => 'admin',:action => 'invite'} )do |f| %>
+    <%= f.label :email, "Email" %>
+    <%= f.text_field :email  %>
+    <%= f.submit "invite" %>
+
+<% end %>

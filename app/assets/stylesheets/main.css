@@ -1,0 +1,30 @@
+body{
+   
+  text-align: center;
+}
+.h2{
+  font-size:1.5em;
+  color:#525252;
+}
+
+.field{
+	font-size:1.2em;
+  color:black;
+  
+}
+#content{background: #FFE4E1}
+#footer{background: #FFF0F5}
+#header{background: #FAF0E6}
+
+li 
+{
+  display: inline;
+}
+li a {
+  list-style-type: none;
+    
+    color: black;
+    
+    padding: 14px 16px;
+    text-decoration: none;
+}

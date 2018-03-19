@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><strong>status update</strong></title>
+	<%= stylesheet_link_tag('application', :media => 'all', 'data-turbolinks-track': 'reload') %>
+</head>
+<body>
+	<div id="header">
+		
+		<ul class="navbar" >
+
+			<li><%= link_to('Home' , :controller =>"statusreport", :action => "home") %></li>
+			<li><% if user_signed_in? %>
+  			<li>
+  				<%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+ 			 </li>
+			<% else %>
+  			<li>
+  			<%= link_to('Login', new_user_session_path)  %>  
+  			</li>
+			<% end %>
+			</li>
+			<li><% if user_signed_in? %>
+  			<li>
+  			<%= link_to('Edit registration', edit_user_registration_path) %>
+  			</li>
+			<% else %>
+  			<li>
+  			<%= link_to('Register', new_user_registration_path)  %>
+  			</li>
+			<% end %></li>
+			<li><%= link_to('About us' , '#')%></li>
+			<li><%= link_to('contact' , '#')%></li>
+			</ul>
+			</div>
+
+	<div id="content">
+		<%= yield %>
+
+	</div>
+
+	<div id="footer">
+		<p> &copy; navtech@status_update  </p>
+	</div>
+
+</body>
+</html>

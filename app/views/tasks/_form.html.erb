@@ -1,0 +1,42 @@
+<%= form_with(model: task, local: true) do |form| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :task_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :task_perform_today %>
+    <%= form.text_area :task_perform_today, id: :task_task_perform_today %>
+  </div>
+
+  <div class="field">
+    <%= form.label :git_link %>
+    <%= form.text_field :git_link, id: :task_git_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :jira_link %>
+    <%= form.text_field :jira_link, id: :task_jira_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remarks %>
+    <%= form.text_area :remarks, id: :task_remarks %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
